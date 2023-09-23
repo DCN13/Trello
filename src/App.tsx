@@ -9,7 +9,7 @@ function App() {
         <Column text="Todo:" />
         <AddNewItem
           toggleButtonText="+ Add another list"
-          onAdd={() => console.log("Item created")}
+          onAdd={(msg) => console.log("Item created : ", msg)}
         />
       </AppContainer>
     </>

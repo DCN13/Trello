@@ -15,8 +15,8 @@ const Column = ({ text }: Props) => {
         <Card text="Component React" />
         <AddNewItem
           toggleButtonText="+ Add another card"
-          onAdd={() => console.log("New item created")}
-          dark="true"
+          onAdd={(msg) => console.log("New item created ", msg)}
+          dark
         />
       </ColumnContainer>
     </>
