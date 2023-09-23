@@ -1,16 +1,11 @@
 import Column from "./Column";
-import {
-  AppContainer,
-  CardContainer,
-  ColumnContainer,
-  ColumnTitle,
-} from "./styles";
+import { AppContainer } from "./styles";
 
 function App() {
   return (
     <>
       <AppContainer>
-        <Column text="Todo::" />
+        <Column text="Todo:" />
       </AppContainer>
     </>
   );

@@ -1,4 +1,5 @@
-import { CardContainer, ColumnContainer, ColumnTitle } from "./styles";
+import Card from "./Card";
+import { ColumnContainer, ColumnTitle } from "./styles";
 
 type Props = {
   text: string;
@@ -8,9 +9,9 @@ const Column = ({ text }: Props) => {
     <>
       <ColumnContainer>
         <ColumnTitle>{text}</ColumnTitle>
-        <CardContainer>App Scafold</CardContainer>
-        <CardContainer>Use TypeScript</CardContainer>
-        <CardContainer>Use styled component</CardContainer>
+        <Card text="Component Scafold" />
+        <Card text="TypeScript" />
+        <Card text="Component React" />
       </ColumnContainer>
     </>
   );
