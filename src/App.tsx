@@ -1,3 +1,4 @@
+import Column from "./Column";
 import {
   AppContainer,
   CardContainer,
@@ -9,12 +10,7 @@ function App() {
   return (
     <>
       <AppContainer>
-        <ColumnContainer>
-          <ColumnTitle>Todo:</ColumnTitle>
-          <CardContainer>1st Item</CardContainer>
-          <CardContainer>2nd Item</CardContainer>
-          <CardContainer>3rd Item</CardContainer>
-        </ColumnContainer>
+        <Column text="Todo::" />
       </AppContainer>
     </>
   );
