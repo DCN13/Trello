@@ -1,3 +1,4 @@
+import AddNewItem from "./AddNewItem";
 import Card from "./Card";
 import { ColumnContainer, ColumnTitle } from "./styles";
 
@@ -12,6 +13,11 @@ const Column = ({ text }: Props) => {
         <Card text="Component Scafold" />
         <Card text="TypeScript" />
         <Card text="Component React" />
+        <AddNewItem
+          toggleButtonText="+ Add another card"
+          onAdd={() => console.log("New item created")}
+          dark="true"
+        />
       </ColumnContainer>
     </>
   );

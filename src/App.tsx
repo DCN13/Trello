@@ -1,3 +1,4 @@
+import AddNewItem from "./AddNewItem";
 import Column from "./Column";
 import { AppContainer } from "./styles";
 
@@ -6,6 +7,10 @@ function App() {
     <>
       <AppContainer>
         <Column text="Todo:" />
+        <AddNewItem
+          toggleButtonText="+ Add another list"
+          onAdd={() => console.log("Item created")}
+        />
       </AppContainer>
     </>
   );
