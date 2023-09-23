@@ -2,6 +2,7 @@ import { CardContainer } from "./styles";
 
 type Props = {
   text: string;
+  id: string;
 };
 const Card = ({ text }: Props) => {
   return (

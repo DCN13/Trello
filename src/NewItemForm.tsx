@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { NewItemButton, NewItemFormContainer, NewItemInput } from "./styles";
 import { useFocus } from "./utils/useFocus";
 
@@ -9,6 +9,11 @@ const NewItemForm = ({ onAdd }: Props) => {
   const [text, setText] = useState("");
   const inputRef = useFocus();
 
+  const handleAddText = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onAdd(text);
+    }
+  };
   return (
     <>
       <NewItemFormContainer>
@@ -16,6 +21,7 @@ const NewItemForm = ({ onAdd }: Props) => {
           value={text}
           onChange={(e) => setText(e.target.value)}
           ref={inputRef}
+          onKeyUp={handleAddText}
         />
         <NewItemButton onClick={() => onAdd(text)}>Create</NewItemButton>
       </NewItemFormContainer>
