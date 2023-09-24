@@ -18,6 +18,7 @@ const Column = ({ text, id }: Props) => {
         {tasks.map((task) => (
           <Card text={task.text} key={task.id} id={task.id} />
         ))}
+        {/* onAdd TODO: validation; use zod */}
         <AddNewItem
           toggleButtonText="+ Add another card"
           onAdd={(add_task) => dispatch(addTask(add_task, id))}

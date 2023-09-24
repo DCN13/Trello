@@ -13,6 +13,7 @@ function App() {
           <Column text={list.text} key={list.id} id={list.id} />
         ))}
 
+        {/* onAdd TODO: validation; use zod */}
         <AddNewItem
           toggleButtonText="+ Add another list"
           onAdd={(add_list) => dispatch(addList(add_list))}
