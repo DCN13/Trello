@@ -25,7 +25,6 @@ const AddNewItem = ({ onAdd, toggleButtonText, dark }: Props) => {
       <AddItemButton
         onClick={() => {
           setShowForm(true);
-          onAdd("Add New Item");
         }}
         dark={dark}
       >

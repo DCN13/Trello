@@ -32,7 +32,11 @@ const AppStateContext = createContext<AppStateContextProps>(
   {} as AppStateContextProps
 );
 
-export const AppStateProvider = ({ children }: { children: ReactNode }) => {
+export const AppStateProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [state, dispatch] = useImmerReducer(appStateReducer, appData);
   const { lists } = state;
 
