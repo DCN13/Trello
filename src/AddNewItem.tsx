@@ -6,6 +6,7 @@ interface Props {
   onAdd: (text: string) => void;
   toggleButtonText: string;
   dark?: boolean;
+  
 }
 const AddNewItem = ({ onAdd, toggleButtonText, dark }: Props) => {
   const [showForm, setShowForm] = useState<boolean>(false);
