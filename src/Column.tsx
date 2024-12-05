@@ -2,8 +2,8 @@ import { useRef } from "react";
 import AddNewItem from "./AddNewItem";
 import Card from "./Card";
 import { useAppState } from "./state/AppStateContext";
-import { addTask, moveList, moveTask, setDraggedItem } from "./state/actions";
-import { ColumnContainer, ColumnTitle } from "./styles";
+import { addTask, deleteList, moveList, moveTask, setDraggedItem } from "./state/actions";
+import { ColumnContainer, ColumnTitle, DeleteButton } from "./styles";
 import { useItemDrag } from "./utils/useItemDrag";
 import { useDrop } from "react-dnd";
 import { throttle } from "throttle-debounce-ts";
@@ -37,6 +37,10 @@ const Column = ({ text, id, isPreview }: Props) => {
 
   drag(drop(ref));
 
+  const handleDeleteColumn = () => {
+    dispatch(deleteList(id));
+  };
+
   return (
     <>
       <ColumnContainer
@@ -48,12 +52,13 @@ const Column = ({ text, id, isPreview }: Props) => {
         {tasks.map((task) => (
           <Card text={task.text} key={task.id} id={task.id} columnId={id} />
         ))}
-        {/* onAdd TODO: validation; use zod */}
         <AddNewItem
           toggleButtonText="+ Add another card"
           onAdd={(add_task) => dispatch(addTask(add_task, id))}
           dark
         />
+        
+        <DeleteButton onClick={handleDeleteColumn}>Delete</DeleteButton>
       </ColumnContainer>
     </>
   );

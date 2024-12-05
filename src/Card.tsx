@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import { useAppState } from "./state/AppStateContext";
-import { CardContainer } from "./styles";
+import { CardContainer, DeleteCardButton } from "./styles";  // importă butonul
 import { isHidden } from "./utils/isHidden";
 import { useItemDrag } from "./utils/useItemDrag";
 import { useDrop } from "react-dnd";
 import { throttle } from "throttle-debounce-ts";
-import { moveTask, setDraggedItem } from "./state/actions";
+import { deleteTask, moveTask, setDraggedItem} from "./state/actions";
 
 type Props = {
   text: string;
@@ -38,6 +38,9 @@ const Card = ({ text, id, columnId, isPreview }: Props) => {
 
   drag(drop(ref));
 
+
+  
+
   return (
     <>
       <CardContainer
@@ -46,8 +49,12 @@ const Card = ({ text, id, columnId, isPreview }: Props) => {
         isHidden={isHidden(draggedItem, "CARD", id, isPreview)}
       >
         {text}
+          <DeleteCardButton onClick={() => dispatch(deleteTask(id, columnId))}>
+            X
+          </DeleteCardButton>
       </CardContainer>
     </>
   );
 };
+
 export default Card;

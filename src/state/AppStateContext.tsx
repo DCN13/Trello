@@ -9,17 +9,17 @@ const appData: AppState = {
     {
       id: "0",
       text: "To Do",
-      tasks: [{ id: "t1", text: "Learn React/TypeScript" }],
+      tasks: [{ id: "t1", text: " Test 1" }],
     },
     {
       id: "1",
       text: "In Progress",
-      tasks: [{ id: "t2", text: "Earn Trillion" }],
+      tasks: [{ id: "t2", text: "Test 2" }],
     },
     {
       id: "2",
       text: "Done",
-      tasks: [{ id: "t3", text: "Learn Happily Ever After" }],
+      tasks: [{ id: "t3", text: "Test 3" }],
     },
   ],
   draggedItem: null,

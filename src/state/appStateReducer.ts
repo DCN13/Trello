@@ -77,6 +77,20 @@ export const appStateReducer = (
 
       break;
     }
+    case "DELETE_LIST": {
+      draft.lists = draft.lists.filter((list) => list.id !== action.payload);
+      break;
+    }
+    case "DELETE_TASK": {
+      const { taskId, listId } = action.payload;
+      const targetListIndex = findItemIndexById(draft.lists, listId);
+      draft.lists[targetListIndex].tasks = draft.lists[
+        targetListIndex
+      ].tasks.filter((task) => task.id !== taskId);
+      break;
+    }
+    
+    
     default: {
       break;
     }

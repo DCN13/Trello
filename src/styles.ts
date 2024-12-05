@@ -2,13 +2,15 @@ import styled from "styled-components";
 
 export const AppContainer = styled.div`
   align-items: flex-start;
-  background-color: #3179ba;
+  background-color: #4c8bf5; 
   display: flex;
   flex-direction: row;
   height: 100%;
   padding: 20px;
   width: 100%;
+  border-radius: 8px; 
 `;
+
 
 interface DragPreviewContainerProps {
   isHidden?: boolean;
@@ -20,14 +22,16 @@ export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
 `;
 
 export const ColumnContainer = styled(DragPreviewContainer)`
-  background-color: #ebecf0;
-  width: 300px;
+  background-color: #f4f5f7; 
+  width: 320px;
   min-height: 40px;
   margin-right: 20px;
-  border-radius: 3px;
-  padding: 8px 8px;
+  border-radius: 6px; /* Colțuri mai rotunjite */
+  padding: 12px;
   flex-grow: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 `;
+
 
 export const ColumnTitle = styled.div`
   padding: 6px 16px 12px;
@@ -35,41 +39,55 @@ export const ColumnTitle = styled.div`
 `;
 
 export const CardContainer = styled(DragPreviewContainer)`
-  background-color: #fff;
+  background-color: #ffffff; 
   cursor: pointer;
   margin-bottom: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   max-width: 300px;
-  border-raduis: 3px;
-  box-shadow: #091e4240 0px 1px 0px 0px;
+  border-radius: 6px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05); 
+  }
 `;
+
 
 type AddItemButtonProps = {
   dark?: boolean;
 };
 export const AddItemButton = styled.button<AddItemButtonProps>`
-  background-color: #ffffff3d;
-  border-raduis: 3px;
+  background-color: #ff9800; 
+  border-radius: 6px; /* Colțuri mai rotunjite */
   border: none;
-  color: ${(props) => (props.dark ? "#000" : "#fff")}
+  color: ${(props) => (props.dark ? "#000" : "#fff")};
   cursor: pointer;
   max-width: 300px;
-  padding: 10px 12px;
-  text-align: left;
-  transition: background 85ms ease-in;
+  padding: 12px 16px;
+  text-align: center;
   width: 100%;
+  transition: background 150ms ease-in, transform 0.2s ease;
+
   &:hover {
-    background-color: #ffffff52;
+    background-color: #ff5722; 
+    transform: scale(1.05);
   }
 `;
 
+
 export const NewItemFormContainer = styled.div`
-  max-width: 300px;
+  max-width: 250px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: flex-start;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8; 
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 `;
+
 
 export const NewItemButton = styled.button`
   background-color: #5aac44;
@@ -98,6 +116,49 @@ export const CustomDragLayerContainer = styled.div`
   top: 0;
   left: 0;
   z-index: 100;
+`;
+
+export const DeleteButton = styled.button`
+  background-color: #ff4d4d;
+  color: white; 
+  border: none; 
+  border-radius: 6px;
+  padding: 10px 20px; 
+  font-size: 14px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px; 
+  
+  &:hover {
+    background-color: #e53935; 
+    transform: scale(1.05); 
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  }
+`;
+
+export const DeleteCardButton = styled.button`
+  background-color: #ff4d4d; 
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 type DragPreviewWrapperProps = {
