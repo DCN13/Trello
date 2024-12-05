@@ -160,6 +160,31 @@ export const DeleteCardButton = styled.button`
     outline: none;
   }
 `;
+export const EditCardButton = styled.button`
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px;
+
+  &:hover {
+    background-color: #45a049;
+  }
+`;
+
+export const SaveButton = styled.button`
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+
+  &:hover {
+    background-color: #007bb5;
+  }
+`;
+
 
 type DragPreviewWrapperProps = {
   position: {

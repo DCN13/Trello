@@ -1,6 +1,6 @@
 Simple Trello Clone
 Un proiect de clonare a aplicației Trello, realizat ca parte dintr-un task educativ. 
-Acest proiect este un exemplu simplificat al unei aplicații de gestionare a sarcinilor, inspirată de Trello, unde utilizatorii pot adăuga, muta și șterge carduri de pe liste.
+Acest proiect este un exemplu simplificat al unei aplicații de gestionare a sarcinilor, inspirată de Trello, unde utilizatorii pot adăuga, muta actualiza și șterge carduri de pe liste.
 
 Descriere
 Simple Trello Clone este o aplicație web care imită funcționalitățile de bază ale aplicației Trello. 
@@ -43,9 +43,9 @@ La prima deschidere a aplicației, utilizatorul va vedea o listă de panouri afi
 Utilizatorul poate:
 
 Crea un panou nou și îi poate da un nume
-Modifica numele unui panou existent
 Șterge un panou
-Liste de carduri
+Crea liste de carduri
+Edita liste de carduri
 
 
 Când un panou este selectat, se deschide o pagină cu liste de carduri, 
@@ -53,10 +53,12 @@ fiecare listă fiind afișată ca o coloană verticală. Utilizatorul poate:
 
 Crea o nouă listă și îi poate da un nume
 Șterge o listă
+Edita listele
+
 
 Utilizatorul poate adăuga un card nou la o listă, oferindu-i un titlu și o descriere. 
 Când face clic pe un card, acesta se deschide într-o fereastră modală, unde utilizatorul poate:
-Șterge cardul
+Șterge cardul si edita
 Colecție de valori
 
 

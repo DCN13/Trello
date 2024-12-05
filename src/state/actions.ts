@@ -15,9 +15,9 @@ export type Action =
       };
     }
   | { type: "DELETE_LIST"; payload: string } 
-  | { type: "DELETE_TASK"; payload: { taskId: string; listId: string } };
+  | { type: "DELETE_TASK"; payload: { taskId: string; listId: string } }
+  | { type: "UPDATE_TASK"; payload: { taskId: string, listId: string, newText: string } };;
 
-// Funcție pentru a adăuga o sarcină
 export const addTask = (text: string, listId: string): Action => ({
   type: "ADD_TASK",
   payload: {
@@ -26,13 +26,11 @@ export const addTask = (text: string, listId: string): Action => ({
   },
 });
 
-// Funcție pentru a adăuga o listă
 export const addList = (text: string): Action => ({
   type: "ADD_LIST",
   payload: text,
 });
 
-// Funcție pentru a muta o listă
 export const moveList = (draggedId: string, hoverId: string): Action => ({
   type: "MOVE_LIST",
   payload: {
@@ -41,13 +39,11 @@ export const moveList = (draggedId: string, hoverId: string): Action => ({
   },
 });
 
-// Funcție pentru a seta elementul tras
 export const setDraggedItem = (draggedItem: DragItem | null): Action => ({
   type: "SET_DRAGGED_ITEM",
   payload: draggedItem,
 });
 
-// Funcție pentru a muta o sarcină
 export const moveTask = (
   draggedItemId: string,
   hoverItemId: string | null,
@@ -63,18 +59,25 @@ export const moveTask = (
   },
 });
 
-// Funcție pentru a șterge o listă
 export const deleteList = (listId: string): Action => ({
   type: "DELETE_LIST",
   payload: listId,
 });
 
-// Funcție pentru a șterge o sarcină
 export const deleteTask = (taskId: string, listId: string): Action => ({
   type: "DELETE_TASK",
   payload: {
     taskId,
     listId,
+  },
+});
+
+export const updateTask = (taskId: string, listId: string, newText: string): Action => ({
+  type: "UPDATE_TASK",
+  payload: {
+    taskId,
+    listId,
+    newText,
   },
 });
 

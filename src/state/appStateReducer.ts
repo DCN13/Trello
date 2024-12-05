@@ -89,6 +89,20 @@ export const appStateReducer = (
       ].tasks.filter((task) => task.id !== taskId);
       break;
     }
+
+    case "UPDATE_TASK": {
+      const { taskId, listId, newText } = action.payload;
+      const targetListIndex = findItemIndexById(draft.lists, listId);
+      
+      const targetTaskIndex = draft.lists[targetListIndex].tasks.findIndex(
+        (task) => task.id === taskId
+      );
+    
+      if (targetTaskIndex !== -1) {
+        draft.lists[targetListIndex].tasks[targetTaskIndex].text = newText;
+      }
+      break;
+    }
     
     
     default: {
